@@ -1,8 +1,8 @@
 body {font-size: 15px;font-family: Roboto}
-.container {width:1440px;margin:0 auto;position:relative;border:1px solid red;} /* */
+.container {width:auto;margin:0 auto;position:relative;} /* */
 section.container {min-height:963px} 
-.topnav {display:flex;min-height:30px;background:#33292a;justify-content:center}
-.topnav li {list-style-type: none;font-size:30px;border-right:1px solid blue;padding:0 5px}
+.topnav {display:flex;min-height:80px;background:#33292a;justify-content:center;justify-items: center;gap: 7%;}
+.topnav li {list-style-type: none;font-size:25px;font-weight: bold; border-right:1px; padding: 20px;}
 .topnav li a:hover {color: lightblue}
 .topnav li a {color:white;text-decoration:none}
 a.icon {display:none}
