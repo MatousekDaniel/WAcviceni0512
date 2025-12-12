@@ -1,4 +1,4 @@
-body {font-size: 15px;font-family: Roboto}
+body {font-size: 15px;font-family: Roboto; margin: 0px;}
 .container {width:auto;margin:0 auto;position:relative;} /* */
 section.container {min-height:963px} 
 .topnav {display:flex;min-height:80px;background:#33292a;justify-content:center;justify-items: center;gap: 7%;}
@@ -7,7 +7,8 @@ section.container {min-height:963px}
 .topnav li a {color:white;text-decoration:none}
 a.icon {display:none}
 
-.sec1 {background: url("img/scott-goodwill.jpg") 50% 50%;}
+.sec1 {background: url("scott-goodwill.jpg") 50% 50%;}
+.sec2 {background-color: white; height: 50vh;}
 .container-text {width:340px;text-align:right;bottom:11vh;right:10vw;position:absolute;}
 
 h1 {font-size:76px;color: white}
