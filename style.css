@@ -1,42 +1,324 @@
-body {font-size: 15px;font-family: Roboto; margin: 0px;}
-.container {width:auto;margin:0 auto;position:relative;} /* */
-section.container {min-height:963px} 
-.topnav {display:flex;min-height:80px;background:#33292a;justify-content:center;justify-items: center;gap: 7%;}
-.topnav li {list-style-type: none;font-size:25px;font-weight: bold; border-right:1px; padding: 20px;}
-.topnav li a:hover {color: lightblue}
-.topnav li a {color:white;text-decoration:none}
-a.icon {display:none}
-
-.sec1 {background: url("scott-goodwill.jpg") 50% 50%;}
-.sec2 {background-color: white; height: 50vh;}
-.sec3 {background-color: #33292a; height: 55vh;}
-.container-text {width:340px;text-align:right;bottom:11vh;right:10vw;position:absolute;}
-
-h1 {font-size:76px;color: white}
-
-
-
-
-
-
-.sec3-maintext{text-align: center; color: white; padding: 5vh;font-size: 40px; font-weight: bold;}
-.sec3-text{text-align: center; color: white;padding: 30px 30px;}
-@media screen and (width <= 768px) { /* w:390px */
-  .container {width:100%}
-  
-  .topnav {
-  /*display: none;*/
-    }
-
-    a.icon {display:block}
+/* ================= ZÁKLAD ================= */
+* {
+  box-sizing: border-box;
 }
 
-@media screen and (width <= 992px) { /* w:390px */
-  .container {width:100%}
-  
-  .topnav {
-  /*display: none;*/
-    }
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+}
 
-    a.icon {display:block}
+/* ================= NAV ================= */
+.header {
+  background: #33292a;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+  padding: 1.5rem 0;
+  list-style: none;
+  margin: 0;
+}
+
+.nav-list a {
+  color:  #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.03em;
+}
+
+.nav-list a:hover {
+  color: lightblue;
+}
+
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("scott-goodwill.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+}
+
+.hero-title {
+  position: absolute;
+  bottom: 8vh;
+  right: 8vw;
+  color: white;
+  font-size: clamp(3rem, 6vw, 5rem);
+  text-align: right;
+  line-height: 1.05;
+  z-index: 2;
+}
+
+.hero-title span {
+  display: block;
+}
+
+/* ================= ABOUT ================= */
+.about {
+  padding: 5rem 2rem;
+}
+
+.about-box {
+  max-width: 1100px;
+  margin: 1rem auto 1rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+.about-text {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.about-image {
+  order: 2;
+  width: 100%;
+  height: 100%;
+  background-image: url("anneliese-phillips-uv4-vl3liKM-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 350px;
+  border-radius: 5px;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-box h2 {
+  margin-bottom: 0px;
+}
+.about-box p {
+  margin-top: 0.5rem;
+}
+
+/* ================= WHAT WE DO ================= */
+.what {
+  background: #33292a;
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.what-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.1rem;
+  margin-top: 10rem;
+}
+
+.what-desc {
+  max-width: 800px;
+  margin: 1.5rem auto;
+  line-height: 1.6;
+}
+
+.what-item {
+  font-weight: 700;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================= TRIPS ================= */
+.trips {
+  padding: 5rem 2rem;
+}
+.trips-grid {
+  max-width: 1100px;
+  margin: 2rem auto 2rem auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 280px);
+  gap: 1.5rem;
+}
+.trip-img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 14px;
+}
+.trip-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.8rem;
+  font-weight: 700;
+
+  background: #f3f3f3;
+  border-radius: 14px;
+}
+.img-1 { background-image: url("simon-english-48nerZQCHgo-unsplash.jpg"); }
+.img-2 { background-image: url("james-wheeler-ZOA-cqKuJAA-unsplash.jpg"); }
+.img-3 { background-image: url("daniel-tseng-73lmMKhi2U8-unsplash.jpg"); }
+.img-4 { background-image: url("holly-mandarich-UVyOfX3v0Ls-unsplash.jpg"); }
+.img-5 { background-image: url("patrick-szylar-45bM3XGqnDE-unsplash.jpg"); }
+.img-6 { background-image: url("chung-yee-tsang-wqxCKM0R6R8-unsplash.jpg"); }
+.img-7 { background-image: url("julian-bialowas-ilkTnuMunP8-unsplash.jpg"); }
+.img-8 { background-image: url("matej-drha-rbDzMcJsBkY-unsplash.jpg"); }
+
+/* ================= CTA ================= */
+.cta {
+  background: #644b4f;
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+.cta-label {
+  order: 1;
+  display: flex;
+  text-align: start;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-left: 60%;
+}
+.cta-text {
+  order: 2;
+  max-width: 600px;
+  text-align: start;
+}
+.cta-btn {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 1000;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  font-family: Roboto;
+}
+
+.cta-btn:hover {
+  background: #444;
+}
+
+.cta-btn:active {
+  background: #222;
+}
+
+/* ================= REVIEWS ================= */
+.reviews {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.reviews-desc{
+  max-width: 320px;
+  margin: 1.5rem auto;
+  line-height: 1.3;
+}
+.reviews-box {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.review .rev-img1,.rev-img2 {
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  margin: 5rem auto 2rem auto;
+}
+.rev-img1 {
+  background-image: url("kalen-emsley-kGSapVfg8Kw-unsplash.jpg");
+}
+.rev-img2 {
+  background-image: url("jeffrey-keenan-pUhxoSapPFA-unsplash.jpg");
+}
+.review p {
+  max-width: 400px;
+  
+  margin: auto auto 2rem auto;
+}
+.review span {
+  font-weight: bolder;
+}
+
+/* ================= FINAL IMAGES ================= */
+.final-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50vh 50vh;
+}
+.final-img {
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+}
+.final-img1 {
+  background-image: url("alexey-fedenkov-BaCZYH9RLmQ-unsplash.jpg");
+}
+.final-img2 {
+  background-image: url("omer-salom-LoijtQXXNhs-unsplash.jpg");
+}
+.final-img3 {
+  background-image: url("vincentiu-solomon-7MH4ped6_Mo-unsplash.jpg");
+}
+.final-img4 {
+  background-image: url("daniel-tseng-73lmMKhi2U8-unsplash.jpg");
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background: #303030;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  font-weight: bold;
+}
+
+.footer a {
+  color: #efa69d;
+  text-decoration: underline;
+}
+.footer a:hover {
+  color: #e9877b;
+  text-decoration: underline;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .about-box,
+  .what-items,
+  .reviews-box,
+  .final-images {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .trips-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 30vh);
+  }
 }
