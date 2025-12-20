@@ -13,6 +13,14 @@ body {
 .header {
   background: #33292a;
 }
+.site-nav {
+  position: relative;
+   min-height: 64px;      
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
 
 .nav-list {
   display: flex;
@@ -33,6 +41,10 @@ body {
 
 .nav-list a:hover {
   color: lightblue;
+}
+
+.nav-toggle{
+  display: none;
 }
 
 /* ================= HERO ================= */
@@ -307,18 +319,149 @@ body {
   text-decoration: underline;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= RESPONSIVE TABLET ================= */
 @media (max-width: 900px) {
-  .about-box,
-  .what-items,
-  .reviews-box,
-  .final-images {
-    grid-template-columns: 1fr;
-    flex-direction: column;
+
+  
+ .nav-burger {
+    display: block;
+    position: absolute;
+    right: 1.2rem;
+    top: 1.2rem;
+    width: 34px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 50;
   }
 
-  .trips-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(4, 30vh);
+  .nav-burger span,
+  .nav-burger span::before,
+  .nav-burger span::after {
+    content: "";
+    display: block;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+  .nav-burger span {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .nav-burger span::before { top: -9px; }
+  .nav-burger span::after  { top: 9px; }
+
+ 
+  .nav-list {
+    display: none;
+  }
+ .about-box {
+    grid-template-columns: 1fr 1fr; 
+    align-items: stretch;
+  }
+
+  .nav-toggle:checked ~ .nav-list {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    list-style: none;
+    margin: 0;
+  }
+  .about-image {
+    order: 1;
+    
+  }
+
+  .about-text {
+    order: 2;
+  }
+
+   .trips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 220px);
+    gap: 1rem;
+  }
+
+ 
+  .trips-text {
+    grid-column: 2;
+    grid-row: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 1rem;
   }
 }
+/* ================= RESPONSIVE MOBILE ================= */
+@media( max-width: 600px) {
+  
+    .nav-toggle:checked ~ .nav-list {
+    gap: 1rem;          
+    padding: 0.5rem 0;
+  }
+
+  .nav-list a {
+    font-size: 0.8rem;  
+  }
+  .about-box {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image {
+    grid-column: auto;
+    min-height: 220px;
+  }
+
+  .about-text {
+    grid-column: auto;
+    text-align: left;
+  }
+
+
+ 
+  .what-items {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+
+  
+  .trips-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .trips-text {
+    grid-column: auto;
+    grid-row: auto;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+    .trip-img {
+    min-height: 240px;
+  }
+
+
+  
+  .reviews-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  .final-images {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 40vh);
+  }
+}
+
